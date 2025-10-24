@@ -1,0 +1,7 @@
+psycopg2-binary
+dotenv
+fastmcp
+asyncio
+crewai
+crewai-tools[mcp]
+crewai[google-genai]

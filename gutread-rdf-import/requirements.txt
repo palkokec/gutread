@@ -1,0 +1,6 @@
+requests
+urllib3
+bs4
+lxml
+psycopg2-binary
+dotenv
