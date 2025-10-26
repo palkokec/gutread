@@ -65,9 +65,19 @@ with MCPServerAdapter(server_params) as tools:
     context=[task1],
     tools=[tools["sql_search"]]
   )
+
+  task3 = Task(
+    name="format_answer",
+    description="""
+    From the given array of results construct nice list of author, book name and brief summary description maximum 150 charatcers.
+    """,
+    expected_output="return list of author, book name and brief summary description maximum 150 charatcers",
+    agent=agent,
+    context=[task2]
+  )
   crew = Crew(
       agents=[agent],
-      tasks=[task1, task2],
+      tasks=[task1, task2, task3],
       verbose=True,
       process=Process.sequential,
   )
